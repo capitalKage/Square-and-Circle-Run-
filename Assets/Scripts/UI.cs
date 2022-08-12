@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelEnd : MonoBehaviour
+public class UI : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,12 +17,13 @@ public class LevelEnd : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void PlayGame()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("New scene loaded.");
-            //SceneManager.LoadScene(1);
-        }
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

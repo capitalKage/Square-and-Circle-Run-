@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DeathDetector : MonoBehaviour
+public class LevelEnd : MonoBehaviour
 {
-    public bool gameOver = false;
-    
+    Player player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -22,8 +23,7 @@ public class DeathDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            gameOver = true;
-            Debug.Log(gameOver);
+            player.playerVic = true;
         }
     }
 }
